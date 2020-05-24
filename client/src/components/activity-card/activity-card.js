@@ -4,14 +4,15 @@ import './activity-card.css';
 import { Card, Button } from 'react-bootstrap';
 
 export class ActivityCard extends Component {
+
   render() {
     return (
       <div className="card">
         <Card>
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
-              Some placeholder text for card
+              {this.props.text}
             </Card.Text>
             <Button variant="primary">Learn More</Button>
           </Card.Body>
