@@ -26,14 +26,14 @@ export class Home extends Component {
       cards.push(<ActivityCard title={value.title} text={value.text} />);
     };
 
-    const rows = chunk(cards, 3);
+    const rows = chunk(cards, 4);
     
     return (
       <Container>
         {rows.map((cols) => (
           <Row>
             {cols.map((col) =>
-              <Col sm={12} md={4}>
+              <Col sm={12} md={3}>
                 {col}
               </Col>
             )}
