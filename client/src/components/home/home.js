@@ -3,6 +3,7 @@ import { chunk } from 'lodash';
 import axios from 'axios';
 import './home.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
 import { ActivityCard } from '../activity-card/activity-card';
 
 export class Home extends Component {
@@ -24,7 +25,7 @@ export class Home extends Component {
     var cards = [];
 
     for (var key in this.state.activities) {
-      cards.push(<ActivityCard title={this.state.activities[key]['title']} text={this.state.activities[key]['text']} />);
+      cards.push(<ActivityCard title={this.state.activities[key]['title']} text={this.state.activities[key]['text']} id={key}/>);
     };
 
     const rows = chunk(cards, 4);

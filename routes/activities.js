@@ -20,4 +20,9 @@ router.get('/', function(req, res, next) {
   return res.send(Object.values(activities));
 });
 
+router.get('/:id', function(req, res, next) {
+  console.log("activity detail");
+  return res.send(Object.values(activities)[req.params.id]);
+});
+
 module.exports = router;
