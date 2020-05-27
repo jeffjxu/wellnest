@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { chunk } from 'lodash';
+import axios from 'axios';
 import './home.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { ActivityCard } from '../activity-card/activity-card';
 
 export class Home extends Component {
-  render() {
-    const data = [
-      {'title': 'Card Title 1', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 2', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 3', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 4', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 5', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 6', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 7', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 8', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 9', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 10', 'text': 'Some placeholder text'},
-      {'title': 'Card Title 11', 'text': 'Some placeholder text'}
-    ];
+  constructor(props) {
+    super(props);
+    this.state = { activities: {} };
+  }
 
+  componentDidMount() {
+    console.log("here");
+    axios.get('/activities')
+      .then(res => {
+        const activities = res.data;
+        this.setState({ activities: res.data });
+      })
+  }
+
+  render() {
     var cards = [];
 
-    for (const [index, value] of data.entries()) {
-      cards.push(<ActivityCard title={value.title} text={value.text} />);
+    for (var key in this.state.activities) {
+      cards.push(<ActivityCard title={this.state.activities[key]['title']} text={this.state.activities[key]['text']} />);
     };
 
     const rows = chunk(cards, 4);
