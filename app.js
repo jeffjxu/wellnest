@@ -40,7 +40,7 @@ app.get('/activities', function (req, res) {
 
 app.get('/detail', function(req, res, next) {
   console.log("activity detail");
-  res.render('activity-detail');
+  return res.send(Object.values(activities)[1]);
 });
 
 // app.use('/', indexRouter);
