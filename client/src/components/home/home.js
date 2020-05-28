@@ -17,7 +17,7 @@ export class Home extends Component {
     axios.get('/activities')
       .then(res => {
         const activities = res.data;
-        this.setState({ activities: res.data });
+        this.setState({ activities: activities});
       })
   }
 

@@ -10,7 +10,7 @@ export class ActivityDetail extends Component {
 
   componentDidMount() {
     console.log("activity-detail react");
-    axios.get('/detail')
+    axios.get('/activity/', {params: {id: this.props.id }})
       .then(res => {
         const title = res.data.title;
         const text = res.data.text;

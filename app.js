@@ -38,9 +38,10 @@ app.get('/activities', function (req, res) {
   return res.send(Object.values(activities));
 });
 
-app.get('/detail', function(req, res, next) {
+app.get('/activity', function(req, res, next) {
   console.log("activity detail");
-  return res.send(Object.values(activities)[1]);
+  console.log(Object.values(activities)[req.query.id]);
+  return res.send(Object.values(activities)[req.query.id]);
 });
 
 // app.use('/', indexRouter);
