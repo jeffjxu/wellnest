@@ -16,13 +16,13 @@ let activities = {
 };
 
 router.get('/', function(req, res, next) {
-  console.log("index");
+  console.log("hi");
   return res.send(Object.values(activities));
 });
 
-router.get('/:id', function(req, res, next) {
+router.get('/hello', function(req, res, next) {
   console.log("activity detail");
-  return res.send(Object.values(activities)[req.params.id]);
+  res.render('activity-detail');
 });
 
 module.exports = router;

@@ -3,6 +3,15 @@ import axios from 'axios';
 import './activity-detail.css';
 
 export class ActivityDetail extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log("activity-detail react");
+    axios.get('/activities/hello');
+  }
+
   render() {
     return (
       <div className="activity-detail">
