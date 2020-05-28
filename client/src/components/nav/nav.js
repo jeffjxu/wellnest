@@ -6,7 +6,7 @@ export class Navigation extends Component {
   render() {
     return (
       <div class="navbar">
-        <Navbar bg="light" fixed="top">
+        <Navbar bg="light">
           <Navbar.Brand href="#home">wellnest</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

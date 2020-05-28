@@ -38,7 +38,7 @@ app.get('/activities', function (req, res) {
   return res.send(Object.values(activities));
 });
 
-app.get('/hello', function(req, res, next) {
+app.get('/detail', function(req, res, next) {
   console.log("activity detail");
   res.render('activity-detail');
 });
