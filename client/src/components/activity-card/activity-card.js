@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './activity-card.css';
 import { withRouter } from 'react-router';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
 export class ActivityCard extends Component {
@@ -15,7 +15,7 @@ export class ActivityCard extends Component {
             <Card.Text>
               {this.props.text}
             </Card.Text>
-            <Link to={{ pathname: '/activity' }}>
+            <Link to={{ pathname: '/activity/' + this.props.id }}>
               <Button variant="primary">Learn More</Button>
             </Link>
           </Card.Body>

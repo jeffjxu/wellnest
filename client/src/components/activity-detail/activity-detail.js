@@ -11,7 +11,8 @@ export class ActivityDetail extends Component {
 
   componentDidMount() {
     console.log("activity-detail react");
-    axios.get('/activity/1', {params: {id: 1 }})
+    const path = this.props.location.pathname;
+    axios.get(path)
       .then(res => {
         const title = res.data.title;
         const text = res.data.text;
@@ -20,6 +21,7 @@ export class ActivityDetail extends Component {
   }
 
   render() {
+    console.log(this.props.location.pathname);
     return (
       <div className="activity-detail">
         <h1>{ this.state.title }</h1>

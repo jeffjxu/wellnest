@@ -7,11 +7,11 @@ export class Navigation extends Component {
     return (
       <div class="navbar">
         <Navbar bg="light">
-          <Navbar.Brand href="#home">wellnest</Navbar.Brand>
+          <Navbar.Brand href="/">wellnest</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#link1">Link 1</Nav.Link>
               <Nav.Link href="#link2">Link 2</Nav.Link>
             </Nav>
