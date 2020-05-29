@@ -16,7 +16,8 @@ export class ActivityDetail extends Component {
       .then(res => {
         const title = res.data.title;
         const text = res.data.text;
-        this.setState({ title: title, text: text });
+        const image = res.data.image;
+        this.setState({ title: title, text: text, image: image });
       });
   }
 
@@ -26,7 +27,8 @@ export class ActivityDetail extends Component {
       <div className="activity-detail">
         <h1>{ this.state.title }</h1>
         <p>{ this.state.text }</p>
-        <p></p>
+        <img src={ this.state.image } alt={ this.state.title + "Image" } />
+        <p>{ this.state.image }</p>
       </div>
     );
   }
