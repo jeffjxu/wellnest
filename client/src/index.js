@@ -10,8 +10,6 @@ ReactDOM.render(
   <div>
     <Navigation />
     <BrowserRouter>
-      <div className="navbar">
-      </div>
       <App />
     </BrowserRouter>
   </div>,

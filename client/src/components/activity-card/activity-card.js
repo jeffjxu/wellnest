@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './activity-card.css';
+import { withRouter } from 'react-router';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
@@ -15,11 +15,9 @@ export class ActivityCard extends Component {
             <Card.Text>
               {this.props.text}
             </Card.Text>
-            <BrowserRouter>
-              <Link to={{ pathname: '/activities/' + this.props.id }}>
-                <Button variant="primary">Learn More</Button>
-              </Link>
-            </BrowserRouter>
+            <Link to={{ pathname: '/activity' }}>
+              <Button variant="primary">Learn More</Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>
@@ -27,4 +25,4 @@ export class ActivityCard extends Component {
   }
 }
 
-export default ActivityCard;
+export default withRouter(ActivityCard);

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { chunk } from 'lodash';
+import { withRouter } from 'react-router';
 import axios from 'axios';
 import './home.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
 import { ActivityCard } from '../activity-card/activity-card';
 
 export class Home extends Component {
@@ -46,4 +46,4 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

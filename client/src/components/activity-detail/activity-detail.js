@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import axios from 'axios';
 import './activity-detail.css';
 
@@ -10,7 +11,7 @@ export class ActivityDetail extends Component {
 
   componentDidMount() {
     console.log("activity-detail react");
-    axios.get('/activity/', {params: {id: this.props.id }})
+    axios.get('/activity/1', {params: {id: 1 }})
       .then(res => {
         const title = res.data.title;
         const text = res.data.text;
@@ -23,9 +24,10 @@ export class ActivityDetail extends Component {
       <div className="activity-detail">
         <h1>{ this.state.title }</h1>
         <p>{ this.state.text }</p>
+        <p></p>
       </div>
     );
   }
 }
 
-export default ActivityDetail;
+export default withRouter(ActivityDetail);
