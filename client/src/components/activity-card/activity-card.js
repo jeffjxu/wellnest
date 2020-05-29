@@ -10,10 +10,11 @@ export class ActivityCard extends Component {
     return (
       <div className="card">
         <Card>
+          <Card.Img variant="top" src={ this.props.image }></Card.Img>
           <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Title>{ this.props.title }</Card.Title>
             <Card.Text>
-              {this.props.text}
+              { this.props.text }
             </Card.Text>
             <Link to={{ pathname: '/activity/' + this.props.id }}>
               <Button variant="primary">Learn More</Button>

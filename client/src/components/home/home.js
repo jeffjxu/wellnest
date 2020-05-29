@@ -17,7 +17,7 @@ export class Home extends Component {
     axios.get('/activities')
       .then(res => {
         const activities = res.data;
-        this.setState({ activities: activities});
+        this.setState({ activities: activities });
       })
   }
 
@@ -25,7 +25,12 @@ export class Home extends Component {
     var cards = [];
 
     for (var key in this.state.activities) {
-      cards.push(<ActivityCard title={this.state.activities[key]['title']} text={this.state.activities[key]['text']} id={key}/>);
+      cards.push(
+        <ActivityCard title={this.state.activities[key]['title']} 
+                      text={this.state.activities[key]['text']} 
+                      id={key} 
+                      image={this.state.activities[key]['image']} />
+      );
     };
 
     const rows = chunk(cards, 4);
