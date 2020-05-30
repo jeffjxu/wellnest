@@ -12,7 +12,7 @@ export class Navigation extends Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#link1">Link 1</Nav.Link>
+              <Nav.Link href="/mailinglist">Mailing List</Nav.Link>
               <Nav.Link href="#link2">Link 2</Nav.Link>
             </Nav>
           </Navbar.Collapse>
